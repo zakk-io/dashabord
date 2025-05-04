@@ -1,0 +1,18 @@
+{
+  "name": "dashabord",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "json-server": "json-server --watch products.json --port 2000"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
