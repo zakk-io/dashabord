@@ -76,7 +76,7 @@ $(document).ready(function() {
   }
   // Initial load + interval for real-time feel
   refresh();
-  setInterval(refresh, 60000);
+  setInterval(refresh, 30000);
   // Export CSV handler
   $('#exportBtn').on('click', () => table.button('.buttons-csv').trigger());
   // New stock form handler: create via API then refresh
