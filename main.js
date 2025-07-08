@@ -6,7 +6,7 @@ async function fetchData() {
     return await response.json();
   } catch (err) {
     console.error('Error fetching data:', err);
-    return { totalWeight: 0, totalRevenue: 0, products: [] };
+    return { totalWeightForRice: 0, totalWeightForSugar:0 , totalRevenueForRice:0 , totalRevenueForSugar: 0, products: [] };
   }
 }
 // Create new product in database
@@ -69,9 +69,11 @@ $(document).ready(function() {
   });
   // Refresh function to fetch and update UI
   async function refresh() {
-    const { totalWeight, totalRevenue, products } = await fetchData();
-    $('#totalWeight').text(`${totalWeight} kg`);
-    $('#totalRevenue').text(`$${totalRevenue}`);
+    const { totalWeightForRice, totalWeightForSugar, totalRevenueForRice, totalRevenueForSugar, products } = await fetchData();
+    $('#totalWeightRice').text(`${totalWeightForRice} kg`);
+    $('#totalRevenueRice').text(`$${totalRevenueForRice}`);
+    $('#totalWeightSugar').text(`${totalWeightForSugar} kg`);
+    $('#totalRevenueSugar').text(`$${totalRevenueForSugar}`);
     table.clear().rows.add(products).draw();
   }
   // Initial load + interval for real-time feel

@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,16 +42,28 @@
 
     <!-- Stats Cards -->
     <div class="row g-4 mb-4">
-      <div class="col-12 col-md-6">
+      <div class="col-6 col-md-3">
         <div class="bg-white p-4 rounded shadow">
-          <h3 class="text-lg font-medium">Total Weight</h3>
-          <p class="text-3xl" id="totalWeight">0 kg</p>
+          <h3 class="text-lg font-medium">Total Weight of Rice</h3>
+          <p class="text-3xl" id="totalWeightRice">0 kg</p>
         </div>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-6 col-md-3">
         <div class="bg-white p-4 rounded shadow">
-          <h3 class="text-lg font-medium">Total Revenue</h3>
-          <p class="text-3xl" id="totalRevenue">$0</p>
+          <h3 class="text-lg font-medium">Total Weight of Sugar</h3>
+          <p class="text-3xl" id="totalWeightSugar">0 kg</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-lg font-medium">Total Revenue of Rice</h3>
+          <p class="text-3xl" id="totalRevenueRice">0 RWF</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-lg font-medium">Total Revenue of Sugar</h3>
+          <p class="text-3xl" id="totalRevenueSugar">0 RWF</p>
         </div>
       </div>
     </div>
@@ -70,7 +83,7 @@
           <input type="number" step="0.01" class="form-control" name="weight" required />
         </div>
         <div class="mb-3">
-          <label class="form-label">Price ($)</label>
+          <label class="form-label">Price (RWF)</label>
           <input type="number" step="0.01" class="form-control" name="price" required />
         </div>
         <button type="submit" class="btn btn-success">Create</button>
@@ -86,7 +99,7 @@
               <th>Product ID</th>
               <th>Product</th>
               <th>Weight (kg)</th>
-              <th>Price ($)</th>
+              <th>Price (RWF)</th>
               <th>Transaction</th>
             </tr>
           </thead>
@@ -96,6 +109,7 @@
     </div>
   </main>
 
+  <!-- Dependencies -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
@@ -108,6 +122,7 @@
   <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
 
+  <!-- Main JS -->
   <script src="main.js"></script>
 </body>
 </html>
