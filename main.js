@@ -76,6 +76,16 @@ $(document).ready(function() {
     $('#totalWeightSugar').text(`${totalWeightForSugar} kg`);
     $('#totalRevenueSugar').text(`$${totalRevenueForSugar}`);
     table.clear().rows.add(products).draw();
+
+        // popup if stock is low (>= 10 kg means we need more stock)
+    if (totalWeightForSugar <= 10) {
+      alert('⚠️ Stock Alert:Sugar is low—please add more to the stock.');
+    }
+
+    if (totalWeightForRice <= 10) {
+      alert('⚠️ Stock Alert: Rice is low—please add more to the stock.');
+    }
+
   }
   // Initial load + interval for real-time feel
   refresh();
