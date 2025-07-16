@@ -9,6 +9,7 @@ async function fetchData() {
     return { totalWeightForRice: 0, totalWeightForSugar:0 , totalRevenueForRice:0 , totalRevenueForSugar: 0, products: [] };
   }
 }
+
 //test
 // Create new product in database
 async function createProduct(data) {
