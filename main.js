@@ -55,7 +55,16 @@ $(document).ready(function() {
       { data: 'createdAt' },
       { data: '_id' },
       { data: 'type' },
-      { data: 'weight' },
+      {
+        data: 'weight',
+        render: (val, type) => {
+          // only format for display/filter, keep raw value for sorting/search
+          if (type === 'display' || type === 'filter') {
+            return Number(val).toFixed(2);
+          }
+          return val;
+        }
+      },
       { data: 'price', createdCell: td => $(td).attr('contenteditable', true).addClass('editable-price') },
       { data: 'transaction',
         render: d => {
@@ -69,9 +78,9 @@ $(document).ready(function() {
   // Refresh function to fetch and update UI
   async function refresh() {
     const { totalWeightForRice, totalWeightForSugar, totalRevenueForRice, totalRevenueForSugar, products } = await fetchData();
-    $('#totalWeightRice').text(`${totalWeightForRice} kg`);
+    $('#totalWeightRice').text(`${Number(totalWeightForRice).toFixed(2)} kg`);
     $('#totalRevenueRice').text(`$${totalRevenueForRice}`);
-    $('#totalWeightSugar').text(`${totalWeightForSugar} kg`);
+    $('#totalWeightSugar').text(`${Number(totalWeightForSugar).toFixed(2)} kg`);
     $('#totalRevenueSugar').text(`$${totalRevenueForSugar}`);
     table.clear().rows.add(products).draw();
 
