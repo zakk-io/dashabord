@@ -57,13 +57,11 @@ $(document).ready(function() {
       { data: 'type' },
       { data: 'weight' },
       { data: 'price', createdCell: td => $(td).attr('contenteditable', true).addClass('editable-price') },
-      { data: 'transaction', createdCell: td => $(td).addClass('transaction-cell'),
-        render: (d, t) => t === 'display'
-          ? `<select class="form-select form-select-sm transaction-select">` +
-            `<option value="buy"${d==='buy'?' selected':''}>Buy</option>` +
-            `<option value="sell"${d==='sell'?' selected':''}>Sell</option>` +
-            `</select>`
-          : d
+      { data: 'transaction',
+        render: d => {
+          // Capitalize first letter (optional)
+          return d.charAt(0).toUpperCase() + d.slice(1);
+        }
       }
     ],
     dom: 'Bfrtip', buttons: ['copy','csv','excel','pdf','print']
