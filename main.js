@@ -74,7 +74,7 @@ $(document).ready(function() {
         }
       }
     ],
-    dom: 'Bfrtip', buttons: ['copy','excel','pdf','print']
+    dom: 'Bfrtip', buttons: ['copy','excel', 'csv' ,'pdf','print']
   });
   // Refresh function to fetch and update UI
   async function refresh() {
